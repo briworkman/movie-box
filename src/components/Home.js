@@ -3,6 +3,7 @@ import {
   API_URL,
   API_KEY,
   API_BASE_URL,
+  IMAGE_BASE_URL,
   POSTER_SIZE,
   BACKDROP_SIZE
 } from "../config";
@@ -15,43 +16,29 @@ import MovieThumb from "./elements/MovieThumb";
 import LoadMoreBtn from "./elements/LoadMoreBtn";
 import Spinner from "./elements/Spinner";
 
+// custom hook
+import { useHomeFetch } from "./hooks/useHomeFetch";
+
 const Home = () => {
-  const [state, setState] = useState({movies: []});
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(false);
+  const [{ state, loading, error }, fetchMovies] = useHomeFetch();
 
-  console.log(state);
+  if (error) return <div>Something Went Wrong...</div>;
+  if (!state.movies[0]) return <Spinner />;
 
-  const fetchMovies = async endpoint => {
-    setError(false);
-    loading(true);
-
-    try {
-      const response = await (await fetch(endpoint)).json();
-      setState(state => ({
-        ...state,
-        movies: [...response.results],
-        heroImage: state.heroImage || response.results[0],
-        currentPage: response.page,
-        totalPages: response.total_pages
-      }));
-
-    } catch (error) {
-      setError(true);
-      console.log(error);
-    }
-    setLoading(false);
-  }
-
-  return(
-  <>
-    <HeroImage />
-    <SearchBar />
-    <Grid />
-    <MovieThumb />
-    <LoadMoreBtn />
-    <Spinner />
-  </>;
-  )};
+  return (
+    <>
+      <HeroImage
+        image={`${IMAGE_BASE_URL}${BACKDROP_SIZE}${state.heroImage.backdrop_path}`}
+        title={state.heroImage.original_title}
+        text={state.heroImage.overview}
+      />
+      <SearchBar />
+      <Grid />
+      <MovieThumb />
+      <LoadMoreBtn />
+      <Spinner />
+    </>
+  );
+};
 
 export default Home;

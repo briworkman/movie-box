@@ -26,14 +26,14 @@ const StyledHeroImage = styled.div`
     z-index: 100;
     max-width: 700px;
     position: absolute;
-    bottom: 40px;
+    bottom: 75px;
     margin-right: 20px;
     min-height: 100px;
     background: rgba(0, 0, 0, 0);
     color: #fff;
 
     h1 {
-      font-family: "Abel", sans-serif;
+      font-family: "Roboto", sans-serif;
       font-size: 48px;
       color: #fff;
 
@@ -44,9 +44,8 @@ const StyledHeroImage = styled.div`
     }
 
     p {
-      font-family: "Abel", sans-serif;
+      font-family: "Roboto", sans-serif;
       font-size: 22px;
-      line-height: 26px;
       color: #fff;
 
       @media screen and (max-width: 720px) {

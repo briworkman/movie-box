@@ -1,11 +1,11 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
-export const StyledSpinner = styled.div`
-  border: 5px solid #f3f3f3; /* Light grey */
-  border-top: 5px solid #16d47b; /* Blue */
+const StyledSpinner = styled.div`
+  border: 5px solid white; /* Light grey */
+  border-top: 5px solid black; /* Blue */
   border-radius: 50%;
-  width: 50px;
-  height: 50px;
+  width: 30px;
+  height: 30px;
   animation: spin 0.8s linear infinite;
   margin: 20px auto;
 
@@ -18,3 +18,5 @@ export const StyledSpinner = styled.div`
     }
   }
 `;
+
+export default StyledSpinner;

@@ -1,13 +1,13 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const StyledHeader = styled.div`
-  background: #1c1c1c;
+  background: #1b252b;
   padding: 0 20px;
   box-sizing: border-box;
 
   .header-content {
     max-width: 1280px;
-    min-height: 120px;
+    min-height: 50px;
     padding: 20px 0px;
     margin: 0 auto;
     box-sizing: border-box;
@@ -20,8 +20,8 @@ export const StyledHeader = styled.div`
 `;
 
 export const StyledRMDBLogo = styled.img`
-  width: 250px;
-  margin-top: 20px;
+  width: 75px;
+  margin-top: -15px;
 
   @media screen and (max-width: 500px) {
     width: 150px;
@@ -31,7 +31,6 @@ export const StyledRMDBLogo = styled.img`
 
 export const StyledTMDBLogo = styled.img`
   width: 122px;
-  margin-top: 25px;
   float: right;
 
   @media screen and (max-width: 500px) {

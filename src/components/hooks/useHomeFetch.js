@@ -10,15 +10,20 @@ export const useHomeFetch = () => {
     setError(false);
     setLoading(true);
 
+    const isLoadMore = endpoint.search("page");
+
     try {
-      const response = await (await fetch(endpoint)).json();
-      console.log(response);
-      setState(state => ({
-        ...state,
-        movies: [...response.results],
-        heroImage: state.heroImage || response.results[0],
-        currentPage: response.page,
-        totalPages: response.total_pages
+      const result = await (await fetch(endpoint)).json();
+      console.log(result);
+      setState(prev => ({
+        ...prev,
+        movies:
+          isLoadMore !== -1
+            ? [...prev.movies, ...result.results]
+            : [...result.results],
+        heroImage: prev.heroImage || result.results[0],
+        currentPage: result.page,
+        totalPages: result.total_pages
       }));
     } catch (error) {
       setError(true);

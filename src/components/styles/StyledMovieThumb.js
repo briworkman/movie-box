@@ -10,8 +10,8 @@ export const StyledMovieThumb = styled.div`
     border-radius: 10px;
 
     :hover {
-      opacity: 0.8;
-      width: 225px;
+      opacity: 0.5;
+      cursor: pointer;
     }
 
     /* @media screen and (max-width: 1024px) {

@@ -6,6 +6,7 @@ export const StyledHeader = styled.div`
   box-sizing: border-box;
 
   .header-content {
+    display: flex;
     max-width: 1280px;
     min-height: 50px;
     padding: 20px 0px;
@@ -20,7 +21,7 @@ export const StyledHeader = styled.div`
 `;
 
 export const StyledRMDBLogo = styled.img`
-  width: 75px;
+  width: 100px;
   margin-top: -15px;
 
   @media screen and (max-width: 500px) {

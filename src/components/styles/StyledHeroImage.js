@@ -33,7 +33,6 @@ const StyledHeroImage = styled.div`
     color: #fff;
 
     h1 {
-      font-family: "Roboto", sans-serif;
       font-size: 48px;
       color: #fff;
 
@@ -44,7 +43,6 @@ const StyledHeroImage = styled.div`
     }
 
     p {
-      font-family: "Roboto", sans-serif;
       font-size: 22px;
       color: #fff;
 
